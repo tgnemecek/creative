@@ -1,0 +1,47 @@
+.wrapper {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.outer-wrapper {
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.site-header {
+    position: relative;
+    z-index: 10;
+}
+
+.site-header > nav {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.site-header ul {
+    /* flex-grow: 1; */
+    /* flex-basis: 1px; */
+}
+
+.site-header h1 {
+    flex-grow: 1;
+}
+
+.line-detail {
+    position: absolute;
+    left: calc(50% - 1px);
+    bottom: -75px;
+    z-index: 1;
+}
+
+.line-detail > line {
+    stroke: $dark-grey;
+    stroke-width: 1px;
+}
