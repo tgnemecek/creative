@@ -11,8 +11,8 @@
     <title>Juno Project 2</title>
 </head>
 <body>
-    <div class="wrapper site-header">
-        <nav>
+    <div class="m-header">
+        <nav class="wrapper">
             <ul>
                 <a href="">HOME</a>
                 <a href="">BLOG</a>
@@ -32,13 +32,13 @@
         </nav>
     </div>
     <main>
-        <section class="outer-wrapper section-hero">
+        <section class="outer-wrapper m-hero">
             <img src="assets/home-1.jpeg" alt="Creative Office">
-            <svg class="line-detail">
+            <svg class="m-line-detail">
                 <line x1="0" y1="0" x2="0" y2="150" />
             </svg>
         </section>
-        <section class="section-services">
+        <section class="m-services">
             <div class="img-container">
                 <img class="stamp-img" src="assets/home-circle-text.png" alt="Branding and Website Pros Stamp">
                 <img class="main-img" src="assets/home-2.jpeg" alt="Minimalist desk with computer">
@@ -54,50 +54,72 @@
                 </article>
             </section>
         </section>
-        <section class="wrapper section-articles">
-            <i class="fas fa-chevron-left"></i>
+        <section class="wrapper m-articles">
+            <button>
+                <i class="fas fa-chevron-left"></i>
+            </button>
             <article>
                 <img src="assets/home-3.jpeg" alt="Layout print">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi commodi dolores facilis aut assumenda id omnis consequuntur et, non tempore sint officia maxime eaque nemo beatae quis minima ratione vero.</p>
             </article>
-            <i class="fas fa-chevron-right"></i>
+            <button>
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </section>
-        <section class="section-features">
+        <section class="m-features">
             <div class="outer-wrapper">
                 <img src="assets/home-4.jpeg" alt="Ipad and coffee">
             </div>
             <div class="wrapper">
                 <ul>
                     <li>
-                        <h3>UNIQUE DESIGN</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <i class="fas fa-magic"></i>
+                        <div>
+                            <h3>UNIQUE DESIGN</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
                     </li>
                     <li>
-                        <h3>RETINA READY</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <i class="fas fa-desktop"></i>
+                        <div>
+                            <h3>UNIQUE DESIGN</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
                     </li>
                     <li>
-                        <h3>ADVANCED OPTIONS</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <i class="fas fa-sliders-h"></i>
+                        <div>
+                            <h3>UNIQUE DESIGN</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <h3>SEO MARKETING</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <i class="fas fa-search"></i>
+                        <div>
+                            <h3>UNIQUE DESIGN</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
                     </li>
                     <li>
-                        <h3>ECOMMERCE READY</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <i class="fas fa-shopping-bag"></i>
+                        <div>
+                            <h3>UNIQUE DESIGN</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
                     </li>
                     <li>
-                        <h3>CUSTOMIZABLE</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <i class="far fa-smile"></i>
+                        <div>
+                            <h3>UNIQUE DESIGN</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
                     </li>
                 </ul>
             </div>
         </section>
-        <section class="wrapper section-team">
+        <section class="wrapper m-team">
             <h2>MEET OUR TEAM</h2>
             <div class="ul-container">
                 <ul>
@@ -127,7 +149,7 @@
                 </ul>
             </div>
         </section>
-        <section class="outer-wrapper section-call-to-action">
+        <section class="outer-wrapper m-call-to-action">
             <article>
                 <h2>DROP US A LINE</h2>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid adipisci sequi veniam vel facilis sed!</p>
@@ -136,13 +158,13 @@
             <img src="assets/home-10.jpeg" alt="Smartphone and documents">
         </section>
     </main>
-    <footer class="wrapper site-footer">
-        <section class="content">
+    <footer class="m-footer">
+        <section class="wrapper content">
             <section>
                 <h5>CONTACT US</h5>
                 <ul>
                     <li>
-                        <p>6591 Orchard Street, Toronto, Ontario</p>
+                        <address>6591 Orchard Street, Toronto, Ontario</address>
                     </li>
                     <li>
                         <p>Email: contact@creative.com</p>
@@ -158,12 +180,12 @@
                     </li>
                 </ul>
                 <nav>
-                    <a href="">ICON</a>
-                    <a href="">ICON</a>
-                    <a href="">ICON</a>
+                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
                 </nav>
             </section>
-            <section>
+            <section class="posts">
                 <h5>RECENT POSTS</h5>
                 <ul>
                     <li>
@@ -189,8 +211,8 @@
                     Signup for emails and notifications below.
                 </p>
                 <form action="">
-                    <input type="email"/>
-                    <button></button>
+                    <input type="email" placeholder="Enter your email"/>
+                    <button><i class="fas fa-long-arrow-alt-right"></i></button>
                 </form>
             </section>
         </section>

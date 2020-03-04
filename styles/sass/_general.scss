@@ -1,3 +1,5 @@
+// LAYOUT RULES:
+
 .wrapper {
     max-width: 1000px;
     width: 90%;
@@ -12,36 +14,58 @@
     position: relative;
 }
 
-.site-header {
-    position: relative;
-    z-index: 10;
-}
+// GENERAL-USE MODULES:
 
-.site-header > nav {
-    position: absolute;
+.m-header {
+    position: fixed;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+    z-index: 10;
+    nav {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    nav ul:last-child {
+        text-align: right;
+    }
+    h1 {
+        text-align: center;
+    }
+    a {
+        display: inline-block;
+        padding: 10px;
+    }
 }
 
-.site-header ul {
-    /* flex-grow: 1; */
-    /* flex-basis: 1px; */
-}
-
-.site-header h1 {
-    flex-grow: 1;
-}
-
-.line-detail {
+.m-line-detail {
     position: absolute;
     left: calc(50% - 1px);
     bottom: -75px;
     z-index: 1;
+    line {
+        stroke: $dark-grey;
+        stroke-width: 1px;
+    }
 }
 
-.line-detail > line {
-    stroke: $dark-grey;
-    stroke-width: 1px;
+.m-footer {
+    background-color: $dark-grey;
+    padding: $section-padding;
+    padding-bottom: 0;
+    color: $white;
+    .content {
+        display: flex;
+        justify-content: space-between;
+    }
+    .subscribe {
+        text-align: right;
+    }
+    .posts ul {
+        list-style-type: circle;
+    }
+    .bottom-container {
+        text-align: center;
+        padding: 30px;
+        border-top: 1px solid $grey;
+    }
 }
