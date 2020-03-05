@@ -73,6 +73,7 @@
 .m-features {
     position: relative;
     background-image: url("../assets/home-4.jpeg");
+    background-position: center;
     .wrapper {
         z-index: 2;
         display: flex;
@@ -142,32 +143,37 @@
     }
     img {
         width: 100%;
+        max-width: 300px;
+        display: block;
+        margin: auto;
     }
 }
 
 @media (max-width: 520px) {
     .m-team ul li:first-child {
         grid-column-end: span 1;
+        max-width: 300px;
+        padding: 50px 0;
+        margin: auto;
     }
 }
 
 .m-call-to-action {
-    /* height: 500px; */
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+    grid-template-rows: 1fr 0px;
     background-color: $primary-color;
-    height: 400px;
-}
-
-.m-call-to-action article {
-    margin: auto;
-    width: 250px;
-    text-align: center;
-    padding: 40px;
-}
-
-.m-call-to-action img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+    article {
+        margin: auto;
+        text-align: center;
+        padding: 40px;
+    }
+    .m-primary-button {
+        margin-top: 10px;
+    }
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
 }

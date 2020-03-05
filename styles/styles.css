@@ -286,6 +286,26 @@ button {
   position: relative;
 }
 
+.m-primary-button {
+  padding: 10px;
+  display: inline-block;
+  font-weight: 600;
+  background-color: #FFFFFF;
+}
+
+.m-line-detail {
+  position: absolute;
+  left: calc(50% - 1px);
+  bottom: -75px;
+  width: 1px;
+  z-index: 1;
+}
+
+.m-line-detail line {
+  stroke: #333333;
+  stroke-width: 1px;
+}
+
 .m-header {
   position: fixed;
   width: 100%;
@@ -360,19 +380,6 @@ button {
   }
 }
 
-.m-line-detail {
-  position: absolute;
-  left: calc(50% - 1px);
-  bottom: -75px;
-  width: 1px;
-  z-index: 1;
-}
-
-.m-line-detail line {
-  stroke: #333333;
-  stroke-width: 1px;
-}
-
 .m-footer {
   background-color: #333333;
   padding: 80px 0;
@@ -389,18 +396,56 @@ button {
           justify-content: space-between;
 }
 
+.m-footer .content section {
+  -ms-flex-preferred-size: 200px;
+      flex-basis: 200px;
+  margin-bottom: 25px;
+}
+
 .m-footer .subscribe {
   text-align: right;
 }
 
+.m-footer .subscribe form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(auto, 150px) 25px;
+      grid-template-columns: minmax(auto, 150px) 25px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .m-footer .posts ul {
   list-style-type: circle;
+  list-style-position: inside;
+}
+
+.m-footer p {
+  display: inline;
 }
 
 .m-footer .bottom-container {
   text-align: center;
   padding: 30px;
   border-top: 1px solid #3f3f3f;
+}
+
+@media (max-width: 700px) {
+  .m-footer .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .m-footer .content section {
+    -ms-flex-preferred-size: inherit;
+        flex-basis: inherit;
+    text-align: left;
+  }
+  .m-footer .content .subscribe {
+    text-align: center;
+  }
 }
 
 /* SMACSS Layout Rules and Generic Modules */
@@ -501,6 +546,7 @@ button {
 .m-features {
   position: relative;
   background-image: url("../assets/home-4.jpeg");
+  background-position: center;
 }
 
 .m-features .wrapper {
@@ -603,30 +649,39 @@ button {
 
 .m-team img {
   width: 100%;
+  max-width: 300px;
+  display: block;
+  margin: auto;
 }
 
 @media (max-width: 520px) {
   .m-team ul li:first-child {
     -ms-grid-column-span: 1;
         grid-column-end: span 1;
+    max-width: 300px;
+    padding: 50px 0;
+    margin: auto;
   }
 }
 
 .m-call-to-action {
-  /* height: 500px; */
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  -ms-grid-rows: 1fr 0px;
+      grid-template-rows: 1fr 0px;
   background-color: #C3DAB7;
-  height: 400px;
 }
 
 .m-call-to-action article {
   margin: auto;
-  width: 250px;
   text-align: center;
   padding: 40px;
+}
+
+.m-call-to-action .m-primary-button {
+  margin-top: 10px;
 }
 
 .m-call-to-action img {

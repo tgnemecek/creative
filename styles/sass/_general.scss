@@ -16,6 +16,25 @@
 
 // GENERAL-USE MODULES:
 
+.m-primary-button {
+    padding: 10px;
+    display: inline-block;
+    font-weight: 600;
+    background-color: $white;
+}
+
+.m-line-detail {
+    position: absolute;
+    left: calc(50% - 1px);
+    bottom: -75px;
+    width: 1px;
+    z-index: 1;
+    line {
+        stroke: $dark-grey;
+        stroke-width: 1px;
+    }
+}
+
 .m-header {
     position: fixed;
     width: 100%;
@@ -71,18 +90,6 @@
     }
 }
 
-.m-line-detail {
-    position: absolute;
-    left: calc(50% - 1px);
-    bottom: -75px;
-    width: 1px;
-    z-index: 1;
-    line {
-        stroke: $dark-grey;
-        stroke-width: 1px;
-    }
-}
-
 .m-footer {
     background-color: $dark-grey;
     padding: $section-padding;
@@ -91,16 +98,45 @@
     .content {
         display: flex;
         justify-content: space-between;
+        section {
+            flex-basis: 200px;
+            margin-bottom: 25px;
+        }
     }
     .subscribe {
         text-align: right;
+        form {
+            display: grid;
+            grid-template-columns: minmax(auto, 150px) 25px;
+            justify-content: center;
+
+        }
     }
     .posts ul {
         list-style-type: circle;
+        list-style-position: inside;
+    }
+    p {
+        display: inline;
     }
     .bottom-container {
         text-align: center;
         padding: 30px;
         border-top: 1px solid $grey;
+    }
+}
+
+@media (max-width: 700px) {
+    .m-footer {
+        .content {
+            flex-direction: column-reverse;
+            section {
+                flex-basis: inherit;
+                text-align: left;
+            }
+            .subscribe {
+                text-align: center;
+            }
+        }
     }
 }
