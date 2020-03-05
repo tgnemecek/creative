@@ -1,5 +1,5 @@
 html {
-    font-size: 62.5%;
+    // font-size: 62.5%;
 }
 
 body {
@@ -9,33 +9,36 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6, a {
+h1, h2, h3, a {
     font-family: 'Montserrat', 'Helvetica', sans-serif;
     line-height: 1.5rem;
+    color: $black;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 37px;
     font-weight: 600;
+    letter-spacing: 0.9px;
 }
 
-h2 {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-}
-
-h3 {
-    font-size: 1.1rem;
+h2, h3 {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1.8px;
 }
 
 p, address, span, input {
     font-family: 'Open Sans', 'Helvetica', sans-serif;
-    line-height: 1.5rem;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.3px;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+    font-size: 14px;
+    letter-spacing: 0.3px;
 }
 
 button {
@@ -45,4 +48,8 @@ button {
 
 * {
     box-shadow: 0 0 0 1px red;
+}
+
+*:after {
+    font-family: 'Montserrat', 'Helvetica', sans-serif;
 }

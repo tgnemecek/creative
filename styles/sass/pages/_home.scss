@@ -5,6 +5,9 @@
         max-height: 600px;
         object-fit: cover;
     }
+    &:after {
+        @include generate-line();
+    }
 }
 
 .m-services {
@@ -41,6 +44,9 @@
         text-align: center;
         margin-top: 25px;
     }
+    p {
+        color: $black;
+    }
 }
 
 @media (max-width: 466px) {
@@ -61,6 +67,9 @@
         text-align: center;
         margin: auto;
         flex-basis: 500px;
+        p {
+            font-style: italic;
+        }
     }
     img {
         border-radius: 50%;
@@ -71,26 +80,27 @@
 }
 
 .m-features {
+    padding: $section-padding;
     position: relative;
     background-image: url("../assets/home-4.jpeg");
-    background-position: center;
+    background-position: 60% 0;
     .wrapper {
         z-index: 2;
         display: flex;
         justify-content: flex-end;
-        align-items: center;
-        align-content: center;
-        height: 600px;
     }
     ul {
-        flex-basis: 250px;
+        flex-basis: 300px;
     }
     li {
-        padding: 25px;
+        padding: 25px 25px 25px 0;
         display: grid;
         grid-template-columns: auto 1fr;
         align-items: start;
         gap: 10px;
+        height: 150px;
+        max-width: 350px;
+        margin: auto;
     }
     i {
         border: 1px solid $dark-grey;
@@ -104,9 +114,12 @@
         height: 600px;
         width: 100%;
     }
+    &:after {
+        @include generate-line(50px, 25px);
+    }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 520px) {
     .m-features {
         .wrapper {
             flex-wrap: wrap;
@@ -124,21 +137,28 @@
     padding: $section-padding;
     h2 {
         text-align: center;
+        margin-bottom: 20px;
     }
     ul {
         display: grid;
         grid-template-columns: repeat( auto-fill, minmax(200px, 1fr) );
         grid-gap: 25px;
-        align-items: center;
-    }
-    ul li:first-child {
-        grid-column-end: span 2;
-        align-self: end;
-        text-align: left;
     }
     .team-card {
         padding: 50px;
+        grid-column-end: span 2;
+        text-align: left;
+        background-color: $light-grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    .work-card {
+        padding: 50px;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     img {
         width: 100%;
@@ -159,7 +179,7 @@
 
 .m-call-to-action {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(320px, 1fr) );
     grid-template-rows: 1fr 0px;
     background-color: $primary-color;
     article {

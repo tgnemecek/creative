@@ -221,10 +221,6 @@ textarea {
   overflow: hidden;
 }
 
-html {
-  font-size: 62.5%;
-}
-
 body {
   background-color: #FFFFFF;
   color: #333333;
@@ -232,33 +228,36 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6, a {
+h1, h2, h3, a {
   font-family: 'Montserrat', 'Helvetica', sans-serif;
   line-height: 1.5rem;
+  color: #000000;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 37px;
   font-weight: 600;
+  letter-spacing: 0.9px;
 }
 
-h2 {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-}
-
-h3 {
-  font-size: 1.1rem;
+h2, h3 {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 1.8px;
 }
 
 p, address, span, input {
   font-family: 'Open Sans', 'Helvetica', sans-serif;
-  line-height: 1.5rem;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.3px;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  font-size: 14px;
+  letter-spacing: 0.3px;
 }
 
 button {
@@ -269,6 +268,10 @@ button {
 * {
   -webkit-box-shadow: 0 0 0 1px red;
           box-shadow: 0 0 0 1px red;
+}
+
+*:after {
+  font-family: 'Montserrat', 'Helvetica', sans-serif;
 }
 
 /* SMACSS Base Rules */
@@ -289,11 +292,19 @@ button {
 .m-primary-button {
   padding: 10px;
   display: inline-block;
-  font-weight: 600;
   background-color: #FFFFFF;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.7px;
+  font-weight: 600;
+  color: #000000;
 }
 
-.m-line-detail {
+.m-submit-button {
+  background-color: #C3DAB7;
+}
+
+.m-line-detail, .m-line-detail-half {
   position: absolute;
   left: calc(50% - 1px);
   bottom: -75px;
@@ -301,7 +312,7 @@ button {
   z-index: 1;
 }
 
-.m-line-detail line {
+.m-line-detail line, .m-line-detail-half line {
   stroke: #333333;
   stroke-width: 1px;
 }
@@ -342,9 +353,30 @@ button {
 .m-header a {
   display: inline-block;
   padding: 10px;
+  color: #000000;
 }
 
-@media (max-width: 560px) {
+.m-header i {
+  font-size: 18px;
+  position: relative;
+}
+
+.m-header .fa-shopping-bag:after {
+  content: '2';
+  display: block;
+  position: absolute;
+  top: 65%;
+  left: 65%;
+  border-radius: 50%;
+  border: 1px solid #939393;
+  height: 12px;
+  width: 12px;
+  background-color: #C3DAB7;
+  font-size: 10px;
+  text-align: center;
+}
+
+@media (max-width: 840px) {
   .m-header .mobile-menu:hover nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -387,6 +419,10 @@ button {
   color: #FFFFFF;
 }
 
+.m-footer h3 {
+  color: #FFFFFF;
+}
+
 .m-footer .content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -399,16 +435,16 @@ button {
 }
 
 .m-footer .content section {
-  -ms-flex-preferred-size: 200px;
-      flex-basis: 200px;
+  -ms-flex-preferred-size: 265px;
+      flex-basis: 265px;
   margin-bottom: 25px;
 }
 
 .m-footer .content section form {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: minmax(auto, 180px) 25px;
-      grid-template-columns: minmax(auto, 180px) 25px;
+  -ms-grid-columns: 1fr 35px;
+      grid-template-columns: 1fr 35px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -432,7 +468,13 @@ button {
   margin: 10px;
 }
 
-@media (max-width: 666px) {
+.m-footer .bottom-container {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid #939393;
+}
+
+@media (max-width: 883px) {
   .m-footer .content {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -451,6 +493,17 @@ button {
   max-height: 600px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.m-hero:after {
+  content: '';
+  height: 100px;
+  width: calc(50% - 1px);
+  display: block;
+  z-index: 1;
+  position: absolute;
+  border-right: 1px solid #939393;
+  bottom: calc((100px / -2) - 0px);
 }
 
 .m-services {
@@ -501,6 +554,10 @@ button {
   margin-top: 25px;
 }
 
+.m-services p {
+  color: #000000;
+}
+
 @media (max-width: 466px) {
   .stamp-img {
     display: none;
@@ -531,6 +588,10 @@ button {
       flex-basis: 500px;
 }
 
+.m-articles article p {
+  font-style: italic;
+}
+
 .m-articles img {
   border-radius: 50%;
   height: 200px;
@@ -539,9 +600,10 @@ button {
 }
 
 .m-features {
+  padding: 80px 0;
   position: relative;
   background-image: url("../assets/home-4.jpeg");
-  background-position: center;
+  background-position: 60% 0;
 }
 
 .m-features .wrapper {
@@ -552,21 +614,15 @@ button {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  height: 600px;
 }
 
 .m-features ul {
-  -ms-flex-preferred-size: 250px;
-      flex-basis: 250px;
+  -ms-flex-preferred-size: 300px;
+      flex-basis: 300px;
 }
 
 .m-features li {
-  padding: 25px;
+  padding: 25px 25px 25px 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto 1fr;
@@ -575,6 +631,9 @@ button {
       -ms-flex-align: start;
           align-items: start;
   gap: 10px;
+  height: 150px;
+  max-width: 350px;
+  margin: auto;
 }
 
 .m-features i {
@@ -592,7 +651,18 @@ button {
   width: 100%;
 }
 
-@media (max-width: 420px) {
+.m-features:after {
+  content: '';
+  height: 50px;
+  width: calc(50% - 1px);
+  display: block;
+  z-index: 1;
+  position: absolute;
+  border-right: 1px solid #939393;
+  bottom: calc((50px / -2) - 25px);
+}
+
+@media (max-width: 520px) {
   .m-features .wrapper {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -613,6 +683,7 @@ button {
 
 .m-team h2 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .m-team ul {
@@ -621,23 +692,39 @@ button {
   -ms-grid-columns: (minmax(200px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 25px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.m-team ul li:first-child {
-  -ms-grid-column-span: 2;
-      grid-column-end: span 2;
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
-  text-align: left;
 }
 
 .m-team .team-card {
   padding: 50px;
+  -ms-grid-column-span: 2;
+      grid-column-end: span 2;
+  text-align: left;
+  background-color: #F6F6F6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.m-team .work-card {
+  padding: 50px;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .m-team img {
@@ -660,8 +747,8 @@ button {
 .m-call-to-action {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   -ms-grid-rows: 1fr 0px;
       grid-template-rows: 1fr 0px;
   background-color: #C3DAB7;

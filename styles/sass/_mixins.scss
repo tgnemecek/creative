@@ -1,0 +1,10 @@
+@mixin generate-line($height: 100px, $y-offset: 0px) { 
+    content: '';
+    height: $height;
+    width: calc(50% - 1px);
+    display: block;
+    z-index: 1;
+    position: absolute;
+    border-right: 1px solid $grey;
+    bottom: calc((#{$height} / -2) - #{$y-offset});
+}
