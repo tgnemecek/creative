@@ -439,6 +439,10 @@ strong {
   text-align: right;
 }
 
+.m-header li, .m-header-alt li {
+  display: inline;
+}
+
 .m-header h1, .m-header-alt h1 {
   position: absolute;
   text-align: center;
@@ -788,6 +792,10 @@ strong {
 .m-blog nav .current {
   font-weight: 600;
   color: #333333;
+}
+
+.m-blog nav a:hover {
+  text-decoration: underline;
 }
 
 .m-blog .information {

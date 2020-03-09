@@ -91,6 +91,9 @@
     nav ul:last-child {
         text-align: right;
     }
+    li {
+        display: inline;
+    }
     h1 {
         position: absolute;
         text-align: center;
@@ -387,6 +390,9 @@
         .current {
             font-weight: 600;
             color: $dark-grey;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     }
     .information {
