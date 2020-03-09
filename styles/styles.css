@@ -207,7 +207,7 @@ textarea {
   box-sizing: border-box;
 }
 
-.visuallyHidden:not(:focus):not(:active) {
+.visually-hidden:not(:focus):not(:active) {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -335,7 +335,7 @@ strong {
 }
 
 .m-primary-button {
-  padding: 10px;
+  padding: 15px;
   display: inline-block;
   background-color: #FFFFFF;
   font-size: 14px;
@@ -577,13 +577,15 @@ strong {
   text-align: center;
 }
 
-.m-footer .posts ul {
-  list-style-type: circle;
-  list-style-position: inside;
-}
-
 .m-footer .posts p {
   display: inline;
+}
+
+.m-footer .posts i {
+  color: #FFFFFF;
+  font-size: 6px;
+  position: relative;
+  top: -3px;
 }
 
 .m-footer .subscribe {
@@ -604,6 +606,7 @@ strong {
   font-size: 16px;
   margin: 20px 10px 0 0;
   text-align: left;
+  color: #FFFFFF;
 }
 
 .m-footer .bottom-container {
@@ -614,7 +617,7 @@ strong {
   font-family: 'Montserrat', 'Helvetica', sans-serif;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 999px) {
   .m-footer .content {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -622,6 +625,9 @@ strong {
   }
   .m-footer .content .subscribe {
     text-align: center;
+  }
+  .m-footer .content .posts h2 {
+    text-align: left;
   }
 }
 
@@ -1128,6 +1134,10 @@ strong {
 }
 
 .m-team .work-card {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2.8px;
+  font-size: 16px;
   padding: 50px;
   text-align: center;
   display: -webkit-box;
@@ -1140,6 +1150,7 @@ strong {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  color: #333333;
 }
 
 .m-team img {
@@ -1154,8 +1165,13 @@ strong {
     -ms-grid-column-span: 1;
         grid-column-end: span 1;
     max-width: 300px;
-    padding: 50px 0;
+    padding: 50px 10px;
     margin: auto;
+  }
+  .m-team ul li:nth-child(5),
+  .m-team ul li:nth-child(6),
+  .m-team ul li:nth-child(7) {
+    display: none;
   }
 }
 
@@ -1166,7 +1182,7 @@ strong {
 
 .m-call-to-action article {
   width: 50%;
-  height: 400px;
+  height: 500px;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1185,7 +1201,7 @@ strong {
 
 .m-call-to-action article p {
   max-width: 350px;
-  margin-bottom: 16px;
+  margin-bottom: 25px;
   color: #333333;
 }
 
@@ -1193,7 +1209,10 @@ strong {
   position: absolute;
   top: 0;
   right: 0;
+  height: 500px;
   width: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (max-width: 740px) {

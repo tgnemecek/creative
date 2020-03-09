@@ -79,19 +79,23 @@
                 </div>
                 <form action="" class="m-form">
                     <div>
-                        <input type="text" placeholder="Enter your name..." required>
+                        <label for="name" class="visually-hidden">Your Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter your name..." required>
                     </div>
                     <div>
-                        <input type="email" placeholder="youremail@domain.com" required>
+                        <label for="email" class="visually-hidden">Your Email</label>
+                        <input type="email" name="email" id="email" placeholder="youremail@domain.com" required>
                     </div>
                     <div>
-                        <input type="text" placeholder="Subject (Optional)">
+                        <label for="name" class="visually-hidden">Subject (Optional)</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject (Optional)">
                     </div>
                     <div class="textarea-container">
-                        <textarea placeholder="Here goes your message" required></textarea>
+                        <label for="comment" class="visually-hidden">Your Name</label>
+                        <textarea placeholder="Here goes your message" id="comment" name="comment" required></textarea>
                     </div>
                     <div>
-                        <button>SEND MESSAGE</button>
+                        <button type="submit">SEND MESSAGE</button>
                     </div>
                 </form>
             </section>
@@ -131,19 +135,24 @@
                 <h2>RECENT POSTS</h2>
                 <ul>
                     <li>
+                        <i class="fas fa-circle"></i>
                         <p>Conversion hackathon partner</p>
                     </li>
                     <li>
-                        <p>Conversion hackathon partner</p>
+                        <i class="fas fa-circle"></i>
+                        <p>Network channels entrepreneur</p>
                     </li>
                     <li>
-                        <p>Conversion hackathon partner</p>
+                        <i class="fas fa-circle"></i>
+                        <p>Return on investment creative</p>
                     </li>
                     <li>
-                        <p>Conversion hackathon partner</p>
+                        <i class="fas fa-circle"></i>
+                        <p>Assets interaction design venture</p>
                     </li>
                     <li>
-                        <p>Conversion hackathon partner</p>
+                        <i class="fas fa-circle"></i>
+                        <p>Infographic learning curve</p>
                     </li>
                 </ul>
             </section>
@@ -153,7 +162,8 @@
                     Signup for emails and notifications below.
                 </p>
                 <form action="">
-                    <input type="email" placeholder="Enter your email"/>
+                    <label for="email" class="visually-hidden">Enter your email</label>
+                    <input type="email" placeholder="Enter your email" id="email"/>
                     <button class="m-subscribe-button"><i class="fas fa-long-arrow-alt-right"></i></button>
                 </form>
             </section>
