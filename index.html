@@ -11,6 +11,9 @@
     <title>Juno Project 2</title>
 </head>
 <body>
+    <a href="#maincontent" class="m-skip-link">
+        Skip to main content.
+    </a>
     <div class="m-header">
         <div class="wrapper">
             <h1>CREATIVE</h1>
@@ -19,13 +22,13 @@
             <i class="fas fa-bars"></i>
             <nav>
                 <ul>
-                    <a href="" class="current">HOME</a>
-                    <a href="">BLOG</a>
+                    <a href="index.html" class="current">HOME</a>
+                    <a href="blog.html">BLOG</a>
                     <a href="">PORTFOLIO</a>
                 </ul>
                 <ul>
                     <a href="">SHOP</a>
-                    <a href="">CONTACT</a>
+                    <a href="contact.html">CONTACT</a>
                     <a href="">
                         <i class="fas fa-search"></i>
                     </a>
@@ -37,10 +40,10 @@
         </div>
 
     </div>
-    <main>
-        <section class="outer-wrapper m-hero">
-            <img src="assets/home-1.jpeg" alt="Creative Office">
-        </section>
+    <section class="outer-wrapper m-hero">
+        <img src="assets/home-1.jpeg" alt="Creative Office">
+    </section>
+    <main id="maincontent">
         <section class="m-services">
             <div class="wrapper">
                 <div class="img-container">
@@ -64,8 +67,12 @@
                 <i class="fas fa-chevron-left"></i>
             </button>
             <article>
-                <img src="assets/home-3.jpeg" alt="Layout print">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi commodi dolores facilis aut assumenda id omnis consequuntur et, non tempore sint officia maxime eaque nemo beatae quis minima ratione vero.</p>
+                <div>
+                    <img src="assets/home-3.jpeg" alt="Layout print">
+                </div>
+                <div>
+                    <em>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi commodi dolores facilis aut assumenda id omnis consequuntur et, non tempore sint officia maxime eaque nemo beatae quis minima ratione vero.</em>
+                </div>
             </article>
             <button>
                 <i class="fas fa-chevron-right"></i>
@@ -220,7 +227,7 @@
                 </p>
                 <form action="">
                     <input type="email" placeholder="Enter your email"/>
-                    <button class="m-submit-button"><i class="fas fa-long-arrow-alt-right"></i></button>
+                    <button class="m-subscribe-button"><i class="fas fa-long-arrow-alt-right"></i></button>
                 </form>
             </section>
         </div>

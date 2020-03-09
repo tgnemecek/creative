@@ -1,4 +1,4 @@
-@mixin generate-line($height: 100px, $y-offset: 0px) { 
+@mixin vertical-line($height: 100px, $y-offset: 0px) { 
     content: '';
     height: $height;
     width: calc(50% - 1px);
@@ -9,8 +9,30 @@
     bottom: calc((#{$height} / -2) - #{$y-offset});
 }
 
+@mixin horizontal-line() {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid $grey;
+}
+
 @mixin home-heading() {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 2.8px;
+}
+
+@mixin general-heading() {
+    font-weight: 600;
+    font-size: 24px;
+    margin: 30px 0;
+    line-height: 50px;
+}
+
+@mixin hide-to-sighted() {
+    position: absolute;
+    left: -1000px;
+    top: 5px;
+    z-index: 999;
+    background: white;
+    color: black;
 }

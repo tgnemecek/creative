@@ -4,7 +4,7 @@ html {
 
 body {
     background-color: $white;
-    color: $dark-grey;
+    color: $grey;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: 'Open Sans', 'Helvetica', sans-serif;
@@ -47,14 +47,37 @@ a {
 button {
     border-radius: 0;
     border: none;
+    font-family: 'Montserrat', 'Helvetica', sans-serif;
 }
 
+textarea,
 input {
+    font-family: 'Open Sans', 'Helvetica', sans-serif;
     border: none;
+    padding: 10px;
+    &:focus {
+        outline: none;
+    }
+    &::placeholder {
+        color: $grey;
+    }
+}
+
+i {
+    color: $dark-grey;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: 600;
+    color: $dark-grey;
 }
 
 * {
-    box-shadow: 0 0 0 1px red;
+    // box-shadow: 0 0 0 1px red;
 }
 
 *:after {
