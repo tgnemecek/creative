@@ -28,12 +28,14 @@
     input, textarea {
         border-bottom: 1px solid $light-grey;
         padding-left: 0;
+        width: 100%;
+        height: 100%;
     }
     input:focus {
         border-bottom: 1px solid $grey;
         // background-color: red;
     }
-    textarea {
+    .textarea-container {
         grid-column-end: span 3;
         height: 250px;
     }
@@ -42,6 +44,15 @@
         border-bottom: 1px solid $grey;
         font-weight: 600;
         padding: 10px 0;
+    }
+}
+
+@media (max-width: 700px) {
+    .m-form {
+        grid-template-columns: 1fr;
+        .textarea-container {
+            grid-column-end: auto;
+        }
     }
 }
 
@@ -78,7 +89,7 @@
         text-align: center;
         display: inline-block;
         width: 100%;
-        padding: 20px;
+        padding: 20px 0;
     }
     a {
         display: inline-block;
@@ -90,11 +101,11 @@
     .current::after {
         content: '';
         position: absolute;
-        width: 100%;
+        width: calc(100% - 10px);
         height: 1px;
         background-color: $black;
         top: 50%;
-        left: 0;
+        left: 5px;
     }
     i {
         font-size: 18px;
@@ -117,8 +128,27 @@
     }
 }
 
+.m-header-alt {
+    @extend .m-header;
+    .mobile-menu {
+        text-align: right;
+    }
+    .fa-bars {
+        background-color: $white;
+        display: inline;
+        line-height: 2;
+    }
+    nav {
+        background-color: $white;
+    }
+}
 @media (max-width: 840px) {
     .m-header {
+        .mobile-menu {
+            width: 120px;
+            right: 0;
+            position: absolute;
+        }
         .mobile-menu:hover nav {
             display: flex;
         }
@@ -133,7 +163,7 @@
             ul {
                 display: flex;
                 flex-direction: column;
-                text-align: right;
+                align-items: flex-end;
                 width: 120px;
             }
         }
@@ -208,17 +238,6 @@
     }
 }
 
-.m-contact-page {
-    .m-header {
-        background-color: $white;
-    }
-    .m-hero {
-        img {
-            height: 200px;
-        }
-    }
-}
-
 // SECTIONS
 
 .m-hero {
@@ -233,6 +252,20 @@
     }
 }
 
+.m-hero-alt {
+    @extend .m-hero;
+    img {
+        max-height: 200px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 710px) {
+    .m-hero-alt:after {
+        display: none;
+    }
+}
+
 .m-contact-us {
     position: relative;
     h2 {
@@ -240,7 +273,7 @@
         font-size: 50px;
         position: relative;
         top: -100px;
-        width: 320px;
+        width: 300px;
         &:before {
             content: '';
             width: 30px;
@@ -269,21 +302,57 @@
     }
     .contact-types {
         display: grid;
-        width: calc(100% - 2px); // This is used to fix rounding issues
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 1px;
-        background-color: $grey;
+        // grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        grid-auto-columns: 1fr;
+        grid-auto-rows: 1fr;
         div {
             background-color: $white;
-            border: $white;
+            border-right: 1px solid $grey;
             padding: 50px;
             color: $dark-grey;
+            // width: 290px;
+        }
+        div:last-child {
+            border: none;
         }
     }
     .img-container {
-        height: 500px;
         img {
-            height: 100%;
+            max-height: 500px;
+            min-height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .m-contact-us {
+        h2 {
+            top: 0;
+        }
+        .contact-types div:nth-child(2) {
+            border: none;
+        }
+        .contact-types div:last-child {
+            grid-column:  1 / 3;
+            grid-row: 2 / 3;
+            margin: auto;
+        }
+    }
+}
+
+@media (max-width: 630px) {
+    .m-contact-us {
+        .contact-types {
+            // grid-template-columns: 1fr;
+            display: block;
+            div {
+                margin: auto;
+                width: 300px;
+                border: none;
+            }
         }
     }
 }
