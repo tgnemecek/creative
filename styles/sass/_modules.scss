@@ -322,7 +322,6 @@
     }
     .contact-types {
         display: grid;
-        // grid-template-columns: 1fr 1fr 1fr;
         grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
         grid-auto-columns: 1fr;
         grid-auto-rows: 1fr;
@@ -331,7 +330,6 @@
             border-right: 1px solid $grey;
             padding: 50px;
             color: $dark-grey;
-            // width: 290px;
         }
         div:last-child {
             border: none;
@@ -366,7 +364,6 @@
 @media (max-width: 630px) {
     .m-contact-us {
         .contact-types {
-            // grid-template-columns: 1fr;
             display: block;
             div {
                 margin: auto;
