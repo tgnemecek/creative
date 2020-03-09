@@ -226,11 +226,14 @@ body {
   color: #333333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Open Sans', 'Helvetica', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.3px;
 }
 
 h1, h2, h3, a {
   font-family: 'Montserrat', 'Helvetica', sans-serif;
-  line-height: 1.5rem;
   color: #000000;
 }
 
@@ -238,19 +241,6 @@ h1 {
   font-size: 37px;
   font-weight: 600;
   letter-spacing: 0.9px;
-}
-
-h2, h3 {
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: 1.8px;
-}
-
-p, address, span, input {
-  font-family: 'Open Sans', 'Helvetica', sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.3px;
 }
 
 a {
@@ -262,6 +252,10 @@ a {
 
 button {
   border-radius: 0;
+  border: none;
+}
+
+input {
   border: none;
 }
 
@@ -289,6 +283,7 @@ button {
   position: relative;
 }
 
+/* SMACSS Layout Rules */
 .m-primary-button {
   padding: 10px;
   display: inline-block;
@@ -352,8 +347,20 @@ button {
 
 .m-header a {
   display: inline-block;
+  position: relative;
   padding: 10px;
   color: #000000;
+  font-size: 14px;
+}
+
+.m-header .current::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #000000;
+  top: 50%;
+  left: 0;
 }
 
 .m-header i {
@@ -369,10 +376,11 @@ button {
   left: 65%;
   border-radius: 50%;
   border: 1px solid #939393;
-  height: 12px;
-  width: 12px;
+  height: 13px;
+  width: 13px;
   background-color: #C3DAB7;
   font-size: 10px;
+  line-height: 13px;
   text-align: center;
 }
 
@@ -419,8 +427,9 @@ button {
   color: #FFFFFF;
 }
 
-.m-footer h3 {
+.m-footer h2 {
   color: #FFFFFF;
+  margin-bottom: 20px;
 }
 
 .m-footer .content {
@@ -434,13 +443,30 @@ button {
           justify-content: space-between;
 }
 
-.m-footer .content section {
-  -ms-flex-preferred-size: 265px;
-      flex-basis: 265px;
+.m-footer .contact, .m-footer .posts, .m-footer .subscribe {
+  -ms-flex-preferred-size: 300px;
+      flex-basis: 300px;
   margin-bottom: 25px;
 }
 
-.m-footer .content section form {
+.m-footer .posts h2 {
+  text-align: center;
+}
+
+.m-footer .posts ul {
+  list-style-type: circle;
+  list-style-position: inside;
+}
+
+.m-footer .posts p {
+  display: inline;
+}
+
+.m-footer .subscribe {
+  text-align: right;
+}
+
+.m-footer .subscribe form {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 35px;
@@ -450,31 +476,25 @@ button {
           justify-content: center;
 }
 
-.m-footer .content .posts ul {
-  list-style-type: circle;
-  list-style-position: inside;
-}
-
-.m-footer .content .posts p {
-  display: inline;
-}
-
-.m-footer .content .subscribe {
-  text-align: right;
+.m-footer .subscribe input {
+  padding: 5px;
 }
 
 .m-footer nav i {
-  font-size: 1.5rem;
-  margin: 10px;
+  font-size: 16px;
+  margin: 20px 10px 0 0;
+  text-align: left;
 }
 
 .m-footer .bottom-container {
   text-align: center;
-  padding: 30px;
+  padding: 60px;
   border-top: 1px solid #939393;
+  letter-spacing: 5px;
+  font-family: 'Montserrat', 'Helvetica', sans-serif;
 }
 
-@media (max-width: 883px) {
+@media (max-width: 1000px) {
   .m-footer .content {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -485,8 +505,6 @@ button {
   }
 }
 
-/* SMACSS Layout Rules and Generic Modules */
-/* SMACSS Non-generic Modules Rules */
 .m-hero img {
   width: 100%;
   height: 100vh;
@@ -510,6 +528,12 @@ button {
   position: relative;
   padding: 80px 0;
   background-color: #C3DAB7;
+}
+
+.m-services h2 {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2.8px;
 }
 
 .m-services .img-container {
@@ -603,7 +627,8 @@ button {
   padding: 80px 0;
   position: relative;
   background-image: url("../assets/home-4.jpeg");
-  background-position: 60% 0;
+  background-position: 80% 0;
+  background-size: cover;
 }
 
 .m-features .wrapper {
@@ -614,6 +639,12 @@ button {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+
+.m-features h2 {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2.8px;
 }
 
 .m-features ul {
@@ -682,8 +713,27 @@ button {
 }
 
 .m-team h2 {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2.8px;
+  font-size: 18px;
   text-align: center;
   margin-bottom: 20px;
+}
+
+.m-team h3 {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2.8px;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.m-team strong {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2.8px;
+  font-size: 16px;
 }
 
 .m-team ul {
@@ -745,28 +795,48 @@ button {
 }
 
 .m-call-to-action {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  -ms-grid-rows: 1fr 0px;
-      grid-template-rows: 1fr 0px;
-  background-color: #C3DAB7;
+  overflow: hidden;
 }
 
 .m-call-to-action article {
-  margin: auto;
+  width: 50%;
+  height: 250px;
   text-align: center;
-  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #C3DAB7;
 }
 
-.m-call-to-action .m-primary-button {
-  margin-top: 10px;
+.m-call-to-action article p {
+  max-width: 350px;
+  margin-bottom: 16px;
 }
 
 .m-call-to-action img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
 }
+
+@media (max-width: 740px) {
+  .m-call-to-action article {
+    width: 100%;
+  }
+  .m-call-to-action img {
+    display: none;
+  }
+}
+
+/* SMACSS Module Rules */

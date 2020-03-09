@@ -8,3 +8,9 @@
     border-right: 1px solid $grey;
     bottom: calc((#{$height} / -2) - #{$y-offset});
 }
+
+@mixin home-heading() {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 2.8px;
+}

@@ -7,11 +7,14 @@ body {
     color: $dark-grey;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: 'Open Sans', 'Helvetica', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.3px;
 }
 
 h1, h2, h3, a {
     font-family: 'Montserrat', 'Helvetica', sans-serif;
-    line-height: 1.5rem;
     color: $black;
 }
 
@@ -22,17 +25,17 @@ h1 {
 }
 
 h2, h3 {
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: 1.8px;
+    // font-size: 18px;
+    // line-height: 24px;
+    // letter-spacing: 1.8px;
 }
 
-p, address, span, input {
-    font-family: 'Open Sans', 'Helvetica', sans-serif;
-    font-size: 14px;
-    line-height: 24px;
-    letter-spacing: 0.3px;
-}
+// p, address, span, strong, input {
+//     font-family: 'Open Sans', 'Helvetica', sans-serif;
+//     font-size: 14px;
+//     line-height: 24px;
+//     letter-spacing: 0.3px;
+// }
 
 a {
     text-decoration: none;
@@ -43,6 +46,10 @@ a {
 
 button {
     border-radius: 0;
+    border: none;
+}
+
+input {
     border: none;
 }
 
