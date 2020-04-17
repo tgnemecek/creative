@@ -23,5 +23,3 @@ CSS written following SMACSS naming convention.
 -   Project is organized using Sass partials (minimum 2)
 -   Project represents the provided design well
 -   Navigation should link to other pages made for the project
-
-Project Source [Here](https://github.com/HackerYou/bootcamp-notes/blob/master/projects/project-02.md)
