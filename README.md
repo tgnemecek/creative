@@ -1,4 +1,4 @@
-# Creative - Juno College Web Development Bootcamp - Project 2
+# Creative
 
 ![Project-1 Screenshot](/readme-image.jpg)
 
